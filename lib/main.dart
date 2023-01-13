@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import '/ui/pages/main_tab_view.dart';
+import '/ui/pages/otp_verification_page.dart';
+import '/ui/pages/register_phone_page.dart';
+import '/ui/pages/register_profile_page.dart';
+import '/ui/pages/welcome_page.dart';
+import '/constants/styles/page_ids.dart';
+import '/ui/pages/intro_page.dart';
+import '/constants/styles/app_colors.dart';
+import 'package:intl/intl.dart';
+import '/generated/l10n.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +22,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Jumush',
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate
+      ],
+      supportedLocales: [
+        Locale('en'),
+        Locale('ru'),
+        Locale('kg')
+      ],
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -22,9 +45,19 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        brightness: Brightness.light,
+        primaryColor: appColor,
+        fontFamily: 'regular'
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const IntroPage(),
+      routes: {
+        PageIds.introPageId: (context) => const IntroPage(),
+        PageIds.welcomePageId: (context) => const WelcomePage(),
+        PageIds.registerPhonePageId: (context) => const RegisterPhoneScreen(),
+        PageIds.otpPageId: (context) => const OtpVerificationScreen(),
+        PageIds.registerProfilePageId: (context) => const RegisterProfileScreen(),
+        PageIds.mainTabView: (context) => const MainTabView()
+      },
     );
   }
 }

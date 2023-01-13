@@ -1,4 +1,4 @@
-# provider_app
+# Jumush App
 
 A new Flutter project.
 
