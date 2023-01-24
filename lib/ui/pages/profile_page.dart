@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import '/constants/strings/texts.dart';
 import '/ui/pages/profile_edit_page.dart';
+import '/generated/l10n.dart';
 
 class ProfilePage extends StatefulWidget {
   ProfilePage({Key? key}) : super(key: key);
@@ -110,6 +112,7 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               children: [
                 ProfileDetail(),
+                SizedBox(height: 10,),
                 TextContent(),
                 ratingBar()
                 //FollowDetail(),
@@ -117,13 +120,13 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
           ),
-          Column(
+          /*Column(
             children: [
               customProfile(),
               buildCategories(),
               buildPhotos(),
             ],
-          ),
+          ),*/
         ],
       ),
     );
@@ -145,7 +148,7 @@ class _ProfilePageState extends State<ProfilePage> {
           child: SizedBox.fromSize(
             size: Size.fromRadius(40),
             child: FittedBox(
-              child: Image.asset('images/p4.jpg'),
+              child: Image.asset('assets/images/p4.jpg'),
               fit: BoxFit.cover,
             ),
           ),
@@ -158,7 +161,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Column(
       children: [
         Text(
-          'Jaydeep Hirani',
+          testName,
           style: TextStyle(fontFamily: 'semibold', fontSize: 20.0),
         ),
         Padding(
@@ -174,7 +177,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     borderRadius: BorderRadius.circular(30.0),
                     color: Colors.orangeAccent),
                 child: Text(
-                  'Работодатель',
+                  S.of(context).employer,
                   style: TextStyle(fontFamily: 'semibold'),
                 ),
               ),

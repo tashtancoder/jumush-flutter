@@ -69,6 +69,246 @@ class S {
       args: [],
     );
   }
+
+  /// `By signig app you are agree to Jumush`
+  String get by_signing_up {
+    return Intl.message(
+      'By signig app you are agree to Jumush',
+      name: 'by_signing_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms of Use and Privacy Policy`
+  String get terms_use_privacy_policy {
+    return Intl.message(
+      'Terms of Use and Privacy Policy',
+      name: 'terms_use_privacy_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms and Conditions`
+  String get terms_and_conditions {
+    return Intl.message(
+      'Terms and Conditions',
+      name: 'terms_and_conditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to \n Jumush`
+  String get welcome_to_jumush {
+    return Intl.message(
+      'Welcome to \n Jumush',
+      name: 'welcome_to_jumush',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue with phone number`
+  String get continue_with_phone {
+    return Intl.message(
+      'Continue with phone number',
+      name: 'continue_with_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your valid phone number. We will send you a 4 digit code to verify your account.`
+  String get enter_valid_number {
+    return Intl.message(
+      'Please enter your valid phone number. We will send you a 4 digit code to verify your account.',
+      name: 'enter_valid_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continue_ {
+    return Intl.message(
+      'Continue',
+      name: 'continue_',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP code`
+  String get otp_code {
+    return Intl.message(
+      'OTP code',
+      name: 'otp_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type OTP code we have sent you`
+  String get enter_otp {
+    return Intl.message(
+      'Type OTP code we have sent you',
+      name: 'enter_otp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send again`
+  String get send_again {
+    return Intl.message(
+      'Send again',
+      name: 'send_again',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile Setup`
+  String get profile_setup {
+    return Intl.message(
+      'Profile Setup',
+      name: 'profile_setup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Surname`
+  String get surname {
+    return Intl.message(
+      'Surname',
+      name: 'surname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Birth Date`
+  String get birthdate {
+    return Intl.message(
+      'Birth Date',
+      name: 'birthdate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Employer`
+  String get employer {
+    return Intl.message(
+      'Employer',
+      name: 'employer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Employee`
+  String get employee {
+    return Intl.message(
+      'Employee',
+      name: 'employee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sexuality`
+  String get sexuality {
+    return Intl.message(
+      'Sexuality',
+      name: 'sexuality',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `male`
+  String get male {
+    return Intl.message(
+      'male',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `female`
+  String get female {
+    return Intl.message(
+      'female',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Agree`
+  String get agree {
+    return Intl.message(
+      'Agree',
+      name: 'agree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chat`
+  String get chat {
+    return Intl.message(
+      'Chat',
+      name: 'chat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Message`
+  String get message {
+    return Intl.message(
+      'Message',
+      name: 'message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search person`
+  String get search_person {
+    return Intl.message(
+      'Search person',
+      name: 'search_person',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write message...`
+  String get write_msg {
+    return Intl.message(
+      'Write message...',
+      name: 'write_msg',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

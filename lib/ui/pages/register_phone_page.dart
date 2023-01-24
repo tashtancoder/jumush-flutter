@@ -7,6 +7,7 @@ import '/ui/pages/otp_verification_page.dart';
 import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import '/generated/l10n.dart';
 
 class RegisterPhoneScreen extends StatefulWidget {
   const RegisterPhoneScreen({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class _RegisterPhoneScreenState extends State<RegisterPhoneScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  'Continue With Phone',
+                  S.of(context).continue_with_phone,
                   textAlign: TextAlign.center,
                   style: style.boldText(),
                 ),
@@ -62,7 +63,7 @@ class _RegisterPhoneScreenState extends State<RegisterPhoneScreen> {
                   height: 24.0,
                 ),
                 Text(
-                  'Please enter your valid phone number. We will send you a 4 digit code to verify your account.',
+                  S.of(context).enter_valid_number,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(
@@ -93,7 +94,7 @@ class _RegisterPhoneScreenState extends State<RegisterPhoneScreen> {
                             PageIds.otpPageId, (route) => false);
                       },
                       label: Text(
-                        'Continue',
+                        S.of(context).continue_,
                         style: TextStyle(fontFamily: 'medium'),
                       ),
                       icon: const Icon(Icons.arrow_right_alt_outlined),

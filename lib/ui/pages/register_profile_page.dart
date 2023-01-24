@@ -5,6 +5,7 @@ import '/constants/styles/app_colors.dart';
 import '/ui/pages/terms_conditions_page.dart';
 import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
+import '/generated/l10n.dart';
 
 class RegisterProfileScreen extends StatefulWidget {
   const RegisterProfileScreen({Key? key}) : super(key: key);
@@ -18,10 +19,17 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
   String gender = '';
   String userType = '';
   DateTime date = DateTime(2022, 12, 24);
-  final List<String> labels = ['Рабочий', 'Работодатель'];
+  //final List<String> labels = ['Рабочий', 'Работодатель'];
+  List<String> labels = [];
   int userTypeIndex = 0;
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
+    labels = [S.of(context).employee, S.of(context).employer];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: _buildAppbar(),
@@ -46,7 +54,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                         builder: (context) => const TermsConditionsScreen()));
               },
               label: Text(
-                'Continue',
+                S.of(context).continue_,
                 style: TextStyle(fontFamily: 'medium'),
               ),
               icon: const Icon(Icons.arrow_right_alt_outlined),
@@ -64,7 +72,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
         iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
         title: Text(
-          'Profile Setup',
+          S.of(context).profile_setup,
           style: style.headText(),
         ));
   }
@@ -118,7 +126,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                 TextField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    hintText: "First Name",
+                    hintText: S.of(context).name,
                     prefixIcon: const Icon(
                       Icons.person,
                       color: appColorLight,
@@ -134,7 +142,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                 TextField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    hintText: "Last Name",
+                    hintText: S.of(context).surname,
                     prefixIcon: const Icon(
                       Icons.person,
                       color: appColorLight,
@@ -160,7 +168,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                               initialDate: date,
                               firstDate: DateTime(1900),
                               lastDate: DateTime(2100),
-                              helpText: 'Birth Date',
+                              helpText: S.of(context).birthdate,
                             );
                             if (newDate == null) return;
                             setState(() => date = newDate);
@@ -202,7 +210,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                               gender = value.toString();
                             });
                           }),
-                      Text('Male'),
+                      Text(S.of(context).male),
                       Radio(
                           value: "female",
                           activeColor: appColorLight,
@@ -212,7 +220,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                               gender = value.toString();
                             });
                           }),
-                      Text('Female'),
+                      Text(S.of(context).female),
                     ],
                   ),
                 ),

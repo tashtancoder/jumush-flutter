@@ -1,15 +1,9 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Flutter UI Kit
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2021-present initappz.
-*/
+
 import 'package:flutter/material.dart';
 import '/constants/styles/page_ids.dart';
 import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
+import '/generated/l10n.dart';
 
 class TermsConditionsScreen extends StatefulWidget {
   const TermsConditionsScreen({Key? key}) : super(key: key);
@@ -40,8 +34,8 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     PageIds.mainTabView, (route) => false);
               },
               label: Text(
-                'Agree',
-                style: TextStyle(fontFamily: 'medium'),
+                S.of(context).agree,
+                style: const TextStyle(fontFamily: 'medium'),
               ),
               icon: const Icon(Icons.arrow_right_alt_outlined),
               style: button.simpleButton(),
@@ -58,7 +52,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
         iconTheme: IconThemeData(color: Colors.black),
         elevation: 0,
         title: Text(
-          'Terms & Conditions',
+          S.of(context).terms_and_conditions,
           style: style.headText(),
         ));
   }

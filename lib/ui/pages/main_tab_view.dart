@@ -8,6 +8,7 @@
 */
 
 import 'package:flutter/material.dart';
+import 'package:jumush/ui/pages/message_detail_page.dart';
 import 'package:jumush/ui/pages/message_page.dart';
 import 'package:jumush/ui/pages/notification_page.dart';
 import 'package:jumush/ui/pages/profile_page.dart';
@@ -85,6 +86,32 @@ class _MainTabViewState extends State<MainTabView> {
             ProfilePage(),
           ],
         ),
+        floatingActionButton: Container(
+          height: 65.0,
+          width: 65.0,
+          margin: EdgeInsets.only(bottom: 20),
+          child: FittedBox(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                      color: appColor.withOpacity(0.3),
+                      offset: const Offset(1.1, 1.1),
+                      blurRadius: 10.0),
+                ],
+              ),
+              child: FloatingActionButton(
+                backgroundColor: appColor,
+                onPressed: () {
+
+                },
+                child: Icon(Icons.add, color: Colors.white),
+              ),
+            ),
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }

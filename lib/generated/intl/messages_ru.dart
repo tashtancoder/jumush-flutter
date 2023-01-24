@@ -22,7 +22,40 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "agree": MessageLookupByLibrary.simpleMessage("Соглашаюсь"),
         "appTitle": MessageLookupByLibrary.simpleMessage("Найти рабочих"),
-        "get_started": MessageLookupByLibrary.simpleMessage("Начать")
+        "birthdate": MessageLookupByLibrary.simpleMessage("Дата рождения"),
+        "by_signing_up": MessageLookupByLibrary.simpleMessage(
+            "Вместе с регистрацией на приложение Jumush Вы соглашаетесь на "),
+        "chat": MessageLookupByLibrary.simpleMessage("Чат"),
+        "continue_": MessageLookupByLibrary.simpleMessage("Продолжить"),
+        "continue_with_phone":
+            MessageLookupByLibrary.simpleMessage("Начать с телефонным номером"),
+        "employee": MessageLookupByLibrary.simpleMessage("Исполнитель"),
+        "employer": MessageLookupByLibrary.simpleMessage("Работодатель"),
+        "enter_otp": MessageLookupByLibrary.simpleMessage(
+            "Наберите ОТП-код присланный нами"),
+        "enter_valid_number": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, введите действующий номер телефона. Мы отправим вам 4-значный код для подтверждения вашей учетной записи"),
+        "female": MessageLookupByLibrary.simpleMessage("Женщина"),
+        "get_started": MessageLookupByLibrary.simpleMessage("Начать"),
+        "male": MessageLookupByLibrary.simpleMessage("Мужчина"),
+        "message": MessageLookupByLibrary.simpleMessage("Сообщение"),
+        "name": MessageLookupByLibrary.simpleMessage("Имя"),
+        "otp_code": MessageLookupByLibrary.simpleMessage("ОТП-код"),
+        "profile_setup":
+            MessageLookupByLibrary.simpleMessage("Создание профиля"),
+        "search_person": MessageLookupByLibrary.simpleMessage("Искать людей"),
+        "send_again": MessageLookupByLibrary.simpleMessage("Отправить заново"),
+        "sexuality": MessageLookupByLibrary.simpleMessage("Пол"),
+        "surname": MessageLookupByLibrary.simpleMessage("Фамилия"),
+        "terms_and_conditions":
+            MessageLookupByLibrary.simpleMessage("Условия и положения"),
+        "terms_use_privacy_policy": MessageLookupByLibrary.simpleMessage(
+            "Условия использования и политика конфиденциальности"),
+        "welcome_to_jumush": MessageLookupByLibrary.simpleMessage(
+            "Добро пожаловать в \n Jumush"),
+        "write_msg":
+            MessageLookupByLibrary.simpleMessage("Пишите сообщение сюда...")
       };
 }

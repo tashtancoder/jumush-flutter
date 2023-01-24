@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '/ui/pages/register_phone_page.dart';
 import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
+import '/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 
 class WelcomePage extends StatefulWidget {
@@ -23,7 +26,7 @@ class _WelcomePageState extends State<WelcomePage> {
       bottomNavigationBar: Container(
         margin: const EdgeInsets.only(bottom: 40),
         child: Text(
-          'By signing up you agree to Dateapp \n Terms of Use & Privacy Policy',
+          S.of(context).by_signing_up + '\n' + S.of(context).terms_use_privacy_policy,
           textAlign: TextAlign.center,
           style: TextStyle(
               color: Colors.black, fontSize: 14, fontFamily: 'regular'),
@@ -52,7 +55,7 @@ Widget _buildBody(context) {
               height: 50.0,
             ),
             Text(
-              'Welcome to \n Jumush',
+              S.of(context).welcome_to_jumush,
               textAlign: TextAlign.center,
               style: style.boldText(),
             ),
@@ -68,7 +71,7 @@ Widget _buildBody(context) {
                 },
                 icon: const Icon(Icons.call),
                 label: Text(
-                  'Continue With Phone',
+                  S.of(context).continue_with_phone,
                   style: TextStyle(fontFamily: 'medium'),
                 ),
                 style: button.simpleButton(),

@@ -22,7 +22,38 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "agree": MessageLookupByLibrary.simpleMessage("Макул"),
         "appTitle": MessageLookupByLibrary.simpleMessage("Ишчилерди табуу"),
-        "get_started": MessageLookupByLibrary.simpleMessage("Баштоо")
+        "birthdate": MessageLookupByLibrary.simpleMessage("Туулган кунунуз"),
+        "by_signing_up": MessageLookupByLibrary.simpleMessage(
+            "Jumush колдонмосуна катталуу менен сиз "),
+        "chat": MessageLookupByLibrary.simpleMessage("Чат"),
+        "continue_": MessageLookupByLibrary.simpleMessage("Улантуу"),
+        "continue_with_phone":
+            MessageLookupByLibrary.simpleMessage("Телефон номер менен баштоо"),
+        "employee": MessageLookupByLibrary.simpleMessage("Аткаруучу"),
+        "employer": MessageLookupByLibrary.simpleMessage("Иш беруучу"),
+        "enter_otp": MessageLookupByLibrary.simpleMessage(
+            "Биз жиберген ОТП-кодту жазыныз"),
+        "enter_valid_number": MessageLookupByLibrary.simpleMessage(
+            "Сураныч, туура номеринизди жазыныз. Оздугунузду тастыктоо учун номеринизге 4-сандык купуя сан жиберебиз"),
+        "female": MessageLookupByLibrary.simpleMessage("Аял"),
+        "get_started": MessageLookupByLibrary.simpleMessage("Баштоо"),
+        "male": MessageLookupByLibrary.simpleMessage("Эркек"),
+        "message": MessageLookupByLibrary.simpleMessage("Жазышуу"),
+        "name": MessageLookupByLibrary.simpleMessage("Атыныз"),
+        "otp_code": MessageLookupByLibrary.simpleMessage("ОТП-код"),
+        "profile_setup": MessageLookupByLibrary.simpleMessage("Профиль тузуу"),
+        "search_person":
+            MessageLookupByLibrary.simpleMessage("Кишилерди издоо"),
+        "send_again": MessageLookupByLibrary.simpleMessage("Кайра жиберуу"),
+        "sexuality": MessageLookupByLibrary.simpleMessage("Жынысы"),
+        "surname": MessageLookupByLibrary.simpleMessage("Фамилияныз"),
+        "terms_and_conditions": MessageLookupByLibrary.simpleMessage("Шарттар"),
+        "terms_use_privacy_policy": MessageLookupByLibrary.simpleMessage(
+            "Колдонуу шарттарына жана купуялык политикабызга макул болгон болосуз"),
+        "welcome_to_jumush":
+            MessageLookupByLibrary.simpleMessage("Jumushка \n кош келдиниздер"),
+        "write_msg": MessageLookupByLibrary.simpleMessage("Бул жака жазыныз...")
       };
 }

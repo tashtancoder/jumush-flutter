@@ -1,5 +1,29 @@
 {
     "appTitle": "Employer find",
-    "get_started": "Get started"
+    "get_started": "Get started",
+    "by_signing_up": "By signig app you are agree to Jumush",
+    "terms_use_privacy_policy": "Terms of Use and Privacy Policy",
+    "terms_and_conditions": "Terms and Conditions",
+    "welcome_to_jumush": "Welcome to \n Jumush",
+    "continue_with_phone": "Continue with phone number",
+    "enter_valid_number": "Please enter your valid phone number. We will send you a 4 digit code to verify your account.",
+    "continue_": "Continue",
+    "otp_code": "OTP code",
+    "enter_otp": "Type OTP code we have sent you",
+    "send_again": "Send again",
+    "profile_setup": "Profile Setup",
+    "name": "Name",
+    "surname": "Surname",
+    "birthdate": "Birth Date",
+    "employer": "Employer",
+    "employee": "Employee",
+    "sexuality": "Sexuality",
+    "male": "male",
+    "female": "female",
+    "agree": "Agree",
+    "chat": "Chat",
+    "message": "Message",
+    "search_person": "Search person",
+    "write_msg": "Write message..."
 
 }

@@ -6,6 +6,7 @@ import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
+import '/generated/l10n.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   const OtpVerificationScreen({Key? key}) : super(key: key);
@@ -24,9 +25,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
       appBar: _buildAppbar(),
       body: SingleChildScrollView(
         reverse: true,
-        child: _buildBody(context),
         padding:
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        child: _buildBody(context),
       ),
     );
   }
@@ -49,7 +50,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  'OTP Code',
+                  S.of(context).otp_code,
                   textAlign: TextAlign.center,
                   style: style.boldText(),
                 ),
@@ -57,7 +58,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   height: 24.0,
                 ),
                 Text(
-                  'Type the verification code that we\'ve sent you.',
+                  S.of(context).enter_otp,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(
@@ -90,8 +91,8 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                                 builder: (context) => const RegisterProfileScreen()));
                       },
                       label: Text(
-                        'Continue',
-                        style: TextStyle(fontFamily: 'medium'),
+                        S.of(context).continue_,
+                        style: const TextStyle(fontFamily: 'medium'),
                       ),
                       icon: const Icon(Icons.arrow_right_alt_outlined),
                       style: button.simpleButton(),
@@ -101,10 +102,10 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 const SizedBox(
                   height: 24.0,
                 ),
-                const Text(
-                  'Send Again',
+                Text(
+                  S.of(context).send_again,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: appColor,
                     fontSize: 16.0,
                     fontFamily: 'semi-bold',

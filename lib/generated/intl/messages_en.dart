@@ -22,7 +22,38 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "agree": MessageLookupByLibrary.simpleMessage("Agree"),
         "appTitle": MessageLookupByLibrary.simpleMessage("Employer find"),
-        "get_started": MessageLookupByLibrary.simpleMessage("Get started")
+        "birthdate": MessageLookupByLibrary.simpleMessage("Birth Date"),
+        "by_signing_up": MessageLookupByLibrary.simpleMessage(
+            "By signig app you are agree to Jumush"),
+        "chat": MessageLookupByLibrary.simpleMessage("Chat"),
+        "continue_": MessageLookupByLibrary.simpleMessage("Continue"),
+        "continue_with_phone":
+            MessageLookupByLibrary.simpleMessage("Continue with phone number"),
+        "employee": MessageLookupByLibrary.simpleMessage("Employee"),
+        "employer": MessageLookupByLibrary.simpleMessage("Employer"),
+        "enter_otp": MessageLookupByLibrary.simpleMessage(
+            "Type OTP code we have sent you"),
+        "enter_valid_number": MessageLookupByLibrary.simpleMessage(
+            "Please enter your valid phone number. We will send you a 4 digit code to verify your account."),
+        "female": MessageLookupByLibrary.simpleMessage("female"),
+        "get_started": MessageLookupByLibrary.simpleMessage("Get started"),
+        "male": MessageLookupByLibrary.simpleMessage("male"),
+        "message": MessageLookupByLibrary.simpleMessage("Message"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "otp_code": MessageLookupByLibrary.simpleMessage("OTP code"),
+        "profile_setup": MessageLookupByLibrary.simpleMessage("Profile Setup"),
+        "search_person": MessageLookupByLibrary.simpleMessage("Search person"),
+        "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
+        "sexuality": MessageLookupByLibrary.simpleMessage("Sexuality"),
+        "surname": MessageLookupByLibrary.simpleMessage("Surname"),
+        "terms_and_conditions":
+            MessageLookupByLibrary.simpleMessage("Terms and Conditions"),
+        "terms_use_privacy_policy": MessageLookupByLibrary.simpleMessage(
+            "Terms of Use and Privacy Policy"),
+        "welcome_to_jumush":
+            MessageLookupByLibrary.simpleMessage("Welcome to \n Jumush"),
+        "write_msg": MessageLookupByLibrary.simpleMessage("Write message...")
       };
 }

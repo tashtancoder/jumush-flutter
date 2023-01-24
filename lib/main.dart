@@ -10,6 +10,7 @@ import '/ui/pages/intro_page.dart';
 import '/constants/styles/app_colors.dart';
 import 'package:intl/intl.dart';
 import '/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Jumush',
       debugShowCheckedModeBanner: false,
       localizationsDelegates: [
+        AppLocalizations.delegate,
         S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

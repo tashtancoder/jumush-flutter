@@ -11,6 +11,7 @@
 //import 'package:date2/pages/othersProfile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:jumush/constants/styles/app_colors.dart';
 import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
 //import 'package:swiping_card_deck/swiping_card_deck.dart';
