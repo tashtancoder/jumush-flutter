@@ -45,9 +45,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "otp_code": MessageLookupByLibrary.simpleMessage("ОТП-код"),
         "profile_setup":
             MessageLookupByLibrary.simpleMessage("Создание профиля"),
+        "resend_code_after":
+            MessageLookupByLibrary.simpleMessage("Отправить код заново после"),
         "search_person": MessageLookupByLibrary.simpleMessage("Искать людей"),
+        "seconds": MessageLookupByLibrary.simpleMessage("секунд"),
         "send_again": MessageLookupByLibrary.simpleMessage("Отправить заново"),
         "sexuality": MessageLookupByLibrary.simpleMessage("Пол"),
+        "something_wrong":
+            MessageLookupByLibrary.simpleMessage("Что-то пошло не так"),
+        "successful_otp_msg":
+            MessageLookupByLibrary.simpleMessage("Правильный ОТП"),
+        "successfully_registered_msg": MessageLookupByLibrary.simpleMessage(
+            "Вы успешно зарегистрироались"),
         "surname": MessageLookupByLibrary.simpleMessage("Фамилия"),
         "terms_and_conditions":
             MessageLookupByLibrary.simpleMessage("Условия и положения"),

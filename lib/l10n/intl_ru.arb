@@ -24,7 +24,12 @@
     "chat": "Чат",
     "message": "Сообщение",
     "search_person": "Искать людей",
-    "write_msg": "Пишите сообщение сюда..."
+    "write_msg": "Пишите сообщение сюда...",
+    "resend_code_after": "Отправить код заново после",
+    "seconds": "секунд",
+    "successful_otp_msg": "Правильный ОТП",
+    "successfully_registered_msg": "Вы успешно зарегистрироались",
+    "something_wrong": "Что-то пошло не так"
 
 }
 

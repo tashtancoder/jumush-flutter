@@ -66,7 +66,7 @@ Widget _buildBody(context) {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      new MaterialPageRoute(
+                      MaterialPageRoute(
                           builder: (context) => RegisterPhoneScreen()));
                 },
                 icon: const Icon(Icons.call),

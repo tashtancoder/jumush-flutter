@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.jumush">
+    package="kg.application.jumush">
    <application
         android:label="jumush"
         android:name="${applicationName}"

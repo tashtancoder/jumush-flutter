@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "417054168962",
+    "project_id": "jumush-phone-otp",
+    "storage_bucket": "jumush-phone-otp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417054168962:android:16dd8251abf29ac910219b",
+        "android_client_info": {
+          "package_name": "kg.application.jumush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417054168962-p5e5gso4ulvqj2n56d6fcuscd885b7j7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdIDhQ_3JKxZ5qhzoTyNbSpvkBMjW8WwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417054168962-p5e5gso4ulvqj2n56d6fcuscd885b7j7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

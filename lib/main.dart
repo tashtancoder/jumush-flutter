@@ -1,5 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import '/controllers/user_controller.dart';
+import '/firebase_options.dart';
 import '/ui/pages/main_tab_view.dart';
 import '/ui/pages/otp_verification_page.dart';
 import '/ui/pages/register_phone_page.dart';
@@ -11,13 +14,21 @@ import '/constants/styles/app_colors.dart';
 import 'package:intl/intl.dart';
 import '/generated/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc/src/transition.dart' as bloc_transition;
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/routes/transitions_type.dart' as get_transition;
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = MyBlocObserver();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+  final userController = Get.put(UserController());
 
   // This widget is the root of your application.
   @override
@@ -51,17 +62,32 @@ class MyApp extends StatelessWidget {
         primaryColor: appColor,
         fontFamily: 'regular'
       ),
-      home: const IntroPage(),
+      home: userController.user.value.name.length > 1 ? const MainTabView() : const IntroPage(),
       routes: {
         PageIds.introPageId: (context) => const IntroPage(),
         PageIds.welcomePageId: (context) => const WelcomePage(),
         PageIds.registerPhonePageId: (context) => const RegisterPhoneScreen(),
-        PageIds.otpPageId: (context) => const OtpVerificationScreen(),
-        PageIds.registerProfilePageId: (context) => const RegisterProfileScreen(),
+        //PageIds.otpPageId: (context) => const OtpVerificationScreen(),
+        //PageIds.registerProfilePageId: (context) => const RegisterProfileScreen(),
         PageIds.mainTabView: (context) => const MainTabView()
       },
     );
   }
+}
+
+class MyBlocObserver extends BlocObserver {
+
+  @override
+  void onChange(BlocBase bloc, Change change){
+    super.onChange(bloc, change);
+  }
+
+  @override
+  void onTransition(Bloc bloc, bloc_transition.Transition transition){
+    super.onTransition(bloc, transition);
+  }
+
+
 }
 
 class MyHomePage extends StatefulWidget {

@@ -44,10 +44,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "name": MessageLookupByLibrary.simpleMessage("Атыныз"),
         "otp_code": MessageLookupByLibrary.simpleMessage("ОТП-код"),
         "profile_setup": MessageLookupByLibrary.simpleMessage("Профиль тузуу"),
+        "resend_code_after":
+            MessageLookupByLibrary.simpleMessage("Кодту кайра жиберуу"),
         "search_person":
             MessageLookupByLibrary.simpleMessage("Кишилерди издоо"),
+        "seconds": MessageLookupByLibrary.simpleMessage("секунд"),
         "send_again": MessageLookupByLibrary.simpleMessage("Кайра жиберуу"),
         "sexuality": MessageLookupByLibrary.simpleMessage("Жынысы"),
+        "something_wrong": MessageLookupByLibrary.simpleMessage("Катаа"),
+        "successful_otp_msg": MessageLookupByLibrary.simpleMessage("Туура ОТП"),
+        "successfully_registered_msg": MessageLookupByLibrary.simpleMessage(
+            "Ийгиликтуу регитрация болдунуз"),
         "surname": MessageLookupByLibrary.simpleMessage("Фамилияныз"),
         "terms_and_conditions": MessageLookupByLibrary.simpleMessage("Шарттар"),
         "terms_use_privacy_policy": MessageLookupByLibrary.simpleMessage(

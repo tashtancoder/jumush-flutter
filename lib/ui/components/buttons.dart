@@ -10,3 +10,14 @@ simpleButton() {
     ),
   );
 }
+
+BorderedButton() {
+  return ElevatedButton.styleFrom(
+      primary: Colors.transparent,
+      onPrimary: appColor,
+      padding: const EdgeInsets.symmetric(vertical: 15),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(50)),
+          side: BorderSide(color: appColor, width: 1)),
+      elevation: 0);
+}

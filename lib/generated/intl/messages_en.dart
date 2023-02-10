@@ -44,9 +44,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "otp_code": MessageLookupByLibrary.simpleMessage("OTP code"),
         "profile_setup": MessageLookupByLibrary.simpleMessage("Profile Setup"),
+        "resend_code_after":
+            MessageLookupByLibrary.simpleMessage("Resend code after"),
         "search_person": MessageLookupByLibrary.simpleMessage("Search person"),
+        "seconds": MessageLookupByLibrary.simpleMessage("seconds"),
         "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
         "sexuality": MessageLookupByLibrary.simpleMessage("Sexuality"),
+        "something_wrong":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "successful_otp_msg":
+            MessageLookupByLibrary.simpleMessage("Correct OTP"),
+        "successfully_registered_msg": MessageLookupByLibrary.simpleMessage(
+            "You are successfully registered"),
         "surname": MessageLookupByLibrary.simpleMessage("Surname"),
         "terms_and_conditions":
             MessageLookupByLibrary.simpleMessage("Terms and Conditions"),

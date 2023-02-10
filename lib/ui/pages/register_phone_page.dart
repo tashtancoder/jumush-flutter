@@ -90,8 +90,13 @@ class _RegisterPhoneScreenState extends State<RegisterPhoneScreen> {
                     padding: const EdgeInsets.only(top: 20.0),
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        Navigator.of(context).pushNamedAndRemoveUntil(
-                            PageIds.otpPageId, (route) => false);
+                        //print(numberController.text);
+                        /*Navigator.of(context).pushNamedAndRemoveUntil(
+                            PageIds.otpPageId,
+                                (route) => false);*/
+                        Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder: (context) => OtpVerificationScreen(phoneNumber: numberController.text)), (route) => false
+                        );
                       },
                       label: Text(
                         S.of(context).continue_,

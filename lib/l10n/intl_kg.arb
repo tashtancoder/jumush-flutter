@@ -24,6 +24,11 @@
     "chat": "Чат",
     "message": "Жазышуу",
     "search_person": "Кишилерди издоо",
-    "write_msg": "Бул жака жазыныз..."
+    "write_msg": "Бул жака жазыныз...",
+    "resend_code_after": "Кодту кайра жиберуу",
+    "seconds": "секунд",
+    "successful_otp_msg": "Туура ОТП",
+    "successfully_registered_msg": "Ийгиликтуу регитрация болдунуз",
+    "something_wrong": "Катаа"
 
 }

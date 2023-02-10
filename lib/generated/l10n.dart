@@ -309,6 +309,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Resend code after`
+  String get resend_code_after {
+    return Intl.message(
+      'Resend code after',
+      name: 'resend_code_after',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `seconds`
+  String get seconds {
+    return Intl.message(
+      'seconds',
+      name: 'seconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Correct OTP`
+  String get successful_otp_msg {
+    return Intl.message(
+      'Correct OTP',
+      name: 'successful_otp_msg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are successfully registered`
+  String get successfully_registered_msg {
+    return Intl.message(
+      'You are successfully registered',
+      name: 'successfully_registered_msg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get something_wrong {
+    return Intl.message(
+      'Something went wrong',
+      name: 'something_wrong',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,14 +1,22 @@
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:jumush/blocs/dialogs.dart';
+import 'package:jumush/controllers/user_controller.dart';
+import 'package:jumush/repos/api_provider.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import '/constants/styles/app_colors.dart';
 import '/ui/pages/terms_conditions_page.dart';
 import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
 import '/generated/l10n.dart';
+import 'package:get/get.dart';
 
 class RegisterProfileScreen extends StatefulWidget {
-  const RegisterProfileScreen({Key? key}) : super(key: key);
+  final String phoneNumber;
+  const RegisterProfileScreen({super.key, required this.phoneNumber});
+
 
   @override
   _RegisterProfileScreenState createState() => _RegisterProfileScreenState();
@@ -18,10 +26,14 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
   get prefixIcon => null;
   String gender = '';
   String userType = '';
-  DateTime date = DateTime(2022, 12, 24);
+  //DateTime date = DateTime(2022, 12, 24);
   //final List<String> labels = ['Рабочий', 'Работодатель'];
   List<String> labels = [];
   int userTypeIndex = 0;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController surnameController = TextEditingController();
+  final userController = UserController.instance;
+  final apiProvider = ApiProvider();
   @override
   void initState() {
     // TODO: implement initState
@@ -29,6 +41,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
   }
   @override
   Widget build(BuildContext context) {
+
     labels = [S.of(context).employee, S.of(context).employer];
     return Scaffold(
       backgroundColor: Colors.white,
@@ -48,10 +61,11 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
             margin: const EdgeInsets.only(bottom: 10.0),
             child: ElevatedButton.icon(
               onPressed: () {
-                Navigator.push(
+                registerUser();
+                /*Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const TermsConditionsScreen()));
+                        builder: (context) => const TermsConditionsScreen())); */
               },
               label: Text(
                 S.of(context).continue_,
@@ -124,6 +138,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                   height: 24.0,
                 ),
                 TextField(
+                  controller: nameController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     hintText: S.of(context).name,
@@ -140,6 +155,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                   height: 16.0,
                 ),
                 TextField(
+                  controller: surnameController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     hintText: S.of(context).surname,
@@ -155,7 +171,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                 const SizedBox(
                   height: 16.0,
                 ),
-                Container(
+                /*Container(
                   width: double.infinity,
                   child: Column(
                     children: [
@@ -197,7 +213,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                 ),
                 const SizedBox(
                   height: 8.0,
-                ),
+                ),*/
                 Container(
                   child: Row(
                     children: <Widget>[
@@ -216,6 +232,7 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
                           activeColor: appColorLight,
                           groupValue: gender,
                           onChanged: (value) {
+
                             setState(() {
                               gender = value.toString();
                             });
@@ -248,5 +265,28 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
         ],
       ),
     );
+  }
+
+  Future<void> registerUser() async {
+
+    final body = jsonEncode({
+      'name': nameController.text,
+      'surname': surnameController.text,
+      'pol': gender,
+      'phone': widget.phoneNumber,
+      'type': userTypeIndex + 1
+    });
+    print(body);
+    CustomDialogs.showProgressIndicator(context);
+    final resStr = await apiProvider.registerUser(body);
+    Navigator.of(context).pop();
+    if (resStr == 'created') {
+      CustomDialogs.toast(context, S.of(context).successfully_registered_msg, true);
+
+    } else {
+      CustomDialogs.toast(context, S.of(context).something_wrong, false);
+    }
+
+
   }
 }
