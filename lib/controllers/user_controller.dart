@@ -12,7 +12,10 @@ class UserController extends GetxController {
 
   @override
   void onInit() async {
+    print('onInit method');
+    super.onInit();
     await getFromSP();
+
   }
 
   saveUserToSP() async{

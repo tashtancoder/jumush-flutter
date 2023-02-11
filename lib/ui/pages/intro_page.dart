@@ -9,6 +9,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:jumush/ui/pages/terms_conditions_page.dart';
 import '/ui/pages/welcome_page.dart';
 import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
@@ -40,10 +41,12 @@ class _IntroPageState extends State<IntroPage> {
             margin: const EdgeInsets.only(bottom: 10.0),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => WelcomePage()));
+                        builder: (context) => const TermsConditionsScreen()),
+                        (route) => false
+                );
               },
               style: button.simpleButton(),
               child: Text(

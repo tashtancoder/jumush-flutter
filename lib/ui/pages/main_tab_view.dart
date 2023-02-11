@@ -8,6 +8,7 @@
 */
 
 import 'package:flutter/material.dart';
+import 'package:jumush/controllers/user_controller.dart';
 import 'package:jumush/ui/pages/message_detail_page.dart';
 import 'package:jumush/ui/pages/message_page.dart';
 import 'package:jumush/ui/pages/notification_page.dart';
@@ -27,10 +28,13 @@ class MainTabView extends StatefulWidget {
 
 class _MainTabViewState extends State<MainTabView> {
   int _currentIndex = 0;
+  final UserController userController = UserController.instance;
   @override
   Widget build(BuildContext context) {
+    print('Main tab build method');
+    print(userController.user.value.name);
     return DefaultTabController(
-      length: 5,
+      length: 4,
       child: Scaffold(
         backgroundColor: Colors.white,
         bottomNavigationBar: (TabBar(
@@ -106,7 +110,7 @@ class _MainTabViewState extends State<MainTabView> {
                 onPressed: () {
 
                 },
-                child: Icon(Icons.add, color: Colors.white),
+                child: Icon(Icons.search, color: Colors.white),
               ),
             ),
           ),

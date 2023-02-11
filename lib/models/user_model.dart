@@ -1,29 +1,30 @@
 class User {
-  late String name;
-  late String surname;
-  late String userType;
-  late String sexuality;
-  late String phoneNumber;
+  String name = '';
+  String surname = '';
+  int type = 0;
+  String pol = '';
+  String phoneNumber = '';
   //final DateTime birthDate;
   User.emptyConstructor() {
 
+    //name = '';
   }
 
   User({
     required this.name,
     required this.surname,
-    required this.userType,
+    required this.type,
     required this.phoneNumber,
-    required this.sexuality,
+    required this.pol,
   });
 
   factory User.fromMap(dynamic data){
     return User(
       name: data['name'],
       surname: data['surname'],
-      userType: data['userType'],
-      sexuality: data['sexuality'],
-      phoneNumber: data['phoneNumber'],
+      type: data['type'],
+      pol: data['pol'],
+      phoneNumber: data['phone'],
     );
 
   }
@@ -32,9 +33,9 @@ class User {
     Map<String, dynamic> data = <String, dynamic>{};
     data['name'] = name;
     data['surname'] = surname;
-    data['userType'] = userType;
-    data['sexuality'] = sexuality;
-    data['phoneNumber'] = phoneNumber;
+    data['type'] = type;
+    data['pol'] = pol;
+    data['phone'] = phoneNumber;
     return data;
   }
 }

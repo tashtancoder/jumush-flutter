@@ -163,6 +163,10 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                           //gravity: ToastGravity.CENTER,
                           toastLength: Toast.LENGTH_SHORT,
                         );
+                        /*Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegisterProfileScreen(phoneNumber: widget.phoneNumber,)));*/
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -237,8 +241,12 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   PreferredSizeWidget _buildAppbar() {
     return AppBar(
       backgroundColor: Colors.white,
-      elevation: 0,
-      iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
+        elevation: 0,
+        title: Text(
+          S.of(context).otp_code,
+          style: style.headText(),
+        )
     );
   }
 

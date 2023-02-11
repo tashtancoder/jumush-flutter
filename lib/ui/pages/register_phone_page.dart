@@ -94,8 +94,8 @@ class _RegisterPhoneScreenState extends State<RegisterPhoneScreen> {
                         /*Navigator.of(context).pushNamedAndRemoveUntil(
                             PageIds.otpPageId,
                                 (route) => false);*/
-                        Navigator.of(context).pushAndRemoveUntil(
-                          MaterialPageRoute(builder: (context) => OtpVerificationScreen(phoneNumber: numberController.text)), (route) => false
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => OtpVerificationScreen(phoneNumber: numberController.text))
                         );
                       },
                       label: Text(

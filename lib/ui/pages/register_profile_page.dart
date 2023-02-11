@@ -4,8 +4,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:jumush/blocs/dialogs.dart';
 import 'package:jumush/controllers/user_controller.dart';
+import 'package:jumush/models/user_model.dart';
 import 'package:jumush/repos/api_provider.dart';
 import 'package:toggle_switch/toggle_switch.dart';
+import '../../constants/styles/page_ids.dart';
 import '/constants/styles/app_colors.dart';
 import '/ui/pages/terms_conditions_page.dart';
 import '/constants/styles/text_styles.dart' as style;
@@ -282,6 +284,11 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
     Navigator.of(context).pop();
     if (resStr == 'created') {
       CustomDialogs.toast(context, S.of(context).successfully_registered_msg, true);
+      await Future.delayed(Duration(seconds: 2));
+      userController.user.value = User.fromMap(jsonDecode(body));
+      await userController.saveUserToSP();
+      Navigator.of(context).pushNamedAndRemoveUntil(
+          PageIds.mainTabView, (route) => false);
 
     } else {
       CustomDialogs.toast(context, S.of(context).something_wrong, false);

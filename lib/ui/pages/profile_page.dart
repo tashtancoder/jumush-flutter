@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:jumush/controllers/user_controller.dart';
 import '/constants/strings/texts.dart';
 import '/ui/pages/profile_edit_page.dart';
 import '/generated/l10n.dart';
@@ -17,6 +18,7 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   var itemList;
+  final userController =  UserController.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -161,7 +163,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Column(
       children: [
         Text(
-          testName,
+          userController.user.value.name + ' ' + userController.user.value.surname,
           style: TextStyle(fontFamily: 'semibold', fontSize: 20.0),
         ),
         Padding(
@@ -177,7 +179,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     borderRadius: BorderRadius.circular(30.0),
                     color: Colors.orangeAccent),
                 child: Text(
-                  S.of(context).employer,
+                  userController.user.value.type == 1 ? S.of(context).employee : S.of(context).employer,
                   style: TextStyle(fontFamily: 'semibold'),
                 ),
               ),

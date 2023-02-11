@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:jumush/ui/pages/welcome_page.dart';
 import '/constants/styles/page_ids.dart';
 import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
@@ -30,8 +31,9 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
             margin: const EdgeInsets.only(bottom: 10.0),
             child: ElevatedButton.icon(
               onPressed: () {
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                    PageIds.mainTabView, (route) => false);
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const WelcomePage())
+                );
               },
               label: Text(
                 S.of(context).agree,

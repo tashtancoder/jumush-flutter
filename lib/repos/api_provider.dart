@@ -1,10 +1,12 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-const String registerUri = 'https://jumush-backend.de.r.appspot.com/register';
-const String getEmployersUri = 'https://jumush-backend.de.r.appspot.com/employers'; // работодателей
-const String getEmployeesUri = 'https://jumush-backend.de.r.appspot.com/employees'; // рабочих
-const String getAllUri = 'https://jumush-backend.de.r.appspot.com/employees'; // всех
+import '/constants/strings/texts.dart';
+
+const String registerUri = '$gcVmServer/register';
+const String getEmployersUri = '$gcVmServer/employers'; // работодателей
+const String getEmployeesUri = '$gcVmServer/employees'; // рабочих
+const String getAllUri = '$gcVmServer/employees'; // всех
 class ApiProvider {
   Future <String> registerUser(String body) async {
     print('registerUser method');
@@ -13,6 +15,7 @@ class ApiProvider {
     };
     try {
       final res = await post(Uri.parse(registerUri), headers: headers, body: body);
+      print(res.body);
       if (res.statusCode == 200) {
         print('successful register');
         print(res.body);

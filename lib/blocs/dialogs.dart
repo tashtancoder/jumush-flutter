@@ -19,7 +19,7 @@ class CustomDialogs {
   static toast(BuildContext context, String msg, bool isPositive){
     Fluttertoast.showToast(
       msg: msg,
-      textColor: isPositive ? Colors.black : Colors.orange,
+      textColor: isPositive ? Colors.white : Colors.yellowAccent,
       //gravity: ToastGravity.CENTER,
       toastLength: Toast.LENGTH_SHORT,
     );
