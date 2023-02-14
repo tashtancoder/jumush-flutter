@@ -1,8 +1,14 @@
 
 
+import 'dart:convert';
+
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
 import 'package:jumush/controllers/user_controller.dart';
+import 'package:jumush/ui/components/dialogs.dart';
+import '../../repos/api_provider.dart';
 import '/constants/strings/texts.dart';
 import '/ui/pages/profile_edit_page.dart';
 import '/generated/l10n.dart';
@@ -172,22 +178,56 @@ class _ProfilePageState extends State<ProfilePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                height: 30,
-                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.orangeAccent),
-                child: Text(
-                  userController.user.value.type == 1 ? S.of(context).employee : S.of(context).employer,
-                  style: TextStyle(fontFamily: 'semibold'),
+              Obx(() => InkWell(
+                child: Container(
+                  height: 30,
+                  padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.0),
+                      color: Colors.orangeAccent),
+                  child: Text(
+                    userController.user.value.type == 1 ? S.of(context).employee : S.of(context).employer,
+                    style: TextStyle(fontFamily: 'semibold'),
+                  ),
                 ),
-              ),
+                onTap: () async{
+                  print('user Type taped');
+                  final int  type = await CustomDialogs.showChangeType(context, userController.user.value.type);
+                  print(type);
+                  if (type != 0 && type != userController.user.value.type) {
+                    changeUserType(type);
+                  }
+                },
+              )),
+
             ],
           ),
         ),
       ],
     );
+  }
+
+  Future<void> changeUserType(int newType) async{
+    final apiProvider = ApiProvider();
+    final body = jsonEncode({
+      'id': userController.user.value.id,
+      'type': newType
+    });
+    print(body);
+    CustomDialogs.showProgressIndicator(context);
+    final resStr = await apiProvider.changeUserType(body);
+    Navigator.of(context).pop();
+    if (resStr == 'changed') {
+      /*userController.user.value.type = newType;
+      userController.saveUserToSP();
+      userController.user.refresh();*/
+      userController.changeUserType(newType);
+      CustomDialogs.toast(context, S.of(context).user_type_change_successful_msg, true);
+    } else {
+      CustomDialogs.toast(context, S.of(context).something_wrong, false);
+    }
+
+
   }
 
   Widget FollowDetail() {

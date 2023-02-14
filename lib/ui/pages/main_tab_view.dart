@@ -7,16 +7,22 @@
   Copyright and Good Faith Purchasers © 2021-present initappz.
 */
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:jumush/controllers/user_controller.dart';
+import 'package:jumush/ui/components/dialogs.dart';
 import 'package:jumush/ui/pages/message_detail_page.dart';
 import 'package:jumush/ui/pages/message_page.dart';
 import 'package:jumush/ui/pages/notification_page.dart';
 import 'package:jumush/ui/pages/profile_page.dart';
+import '../../repos/api_provider.dart';
 import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
 import '/constants/styles/app_colors.dart';
 import '/ui/pages/home_page.dart';
+import '/generated/l10n.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({Key? key}) : super(key: key);
@@ -90,7 +96,38 @@ class _MainTabViewState extends State<MainTabView> {
             ProfilePage(),
           ],
         ),
-        floatingActionButton: Container(
+        floatingActionButton: Obx(() => userController.user.value.type == 1 ? Container(
+          height: 65.0,
+          width: 65.0,
+          margin: EdgeInsets.only(bottom: 20),
+          child: FittedBox(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                      color: userController.user.value.online ? jumushColorGreenLight.withOpacity(0.3) : appColorLight.withOpacity(0.3),
+                      offset: const Offset(1.1, 1.1),
+                      blurRadius: 10.0),
+                ],
+              ),
+              child: FloatingActionButton(
+                backgroundColor: userController.user.value.online ? jumushColorGreenLight : appColorLight,
+                onPressed: () async {
+                  print('employee online taped');
+                  final int  stateOnline = await CustomDialogs.showEmpState(context, userController.user.value.online);
+                  print(stateOnline);
+                  final bool newStateOnline = stateOnline == 0 ? true : false;
+                  if (stateOnline != -1 && newStateOnline != userController.user.value.online) {
+                    changeEmployeeState(newStateOnline);
+                  }
+
+                },
+                child: userController.user.value.online ? const Icon(Icons.online_prediction, color: Colors.white) : const Icon(Icons.offline_bolt_outlined, color: Colors.white)
+              ),
+            ),
+          ),
+        ) : Container(
           height: 65.0,
           width: 65.0,
           margin: EdgeInsets.only(bottom: 20),
@@ -114,9 +151,32 @@ class _MainTabViewState extends State<MainTabView> {
               ),
             ),
           ),
-        ),
+        )),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
+  }
+
+  Future<void> changeEmployeeState(bool newOnline) async{
+    final apiProvider = ApiProvider();
+    final body = jsonEncode({
+      'id': userController.user.value.id,
+      'online': newOnline
+    });
+    print(body);
+    CustomDialogs.showProgressIndicator(context);
+    final resStr = await apiProvider.changeEmployeeState(body);
+    Navigator.of(context).pop();
+    if (resStr == 'changed') {
+      /*userController.user.value.type = newType;
+      userController.saveUserToSP();
+      userController.user.refresh();*/
+      userController.changeEmployeeState(newOnline);
+      CustomDialogs.toast(context, S.of(context).now_u_are + ' ' + (userController.user.value.online ? S.of(context).online : S.of(context).offline), true);
+    } else {
+      CustomDialogs.toast(context, S.of(context).something_wrong, false);
+    }
+
+
   }
 }

@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthdate": MessageLookupByLibrary.simpleMessage("Дата рождения"),
         "by_signing_up": MessageLookupByLibrary.simpleMessage(
             "Вместе с регистрацией на приложение Jumush Вы соглашаетесь на "),
+        "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
+        "change_type":
+            MessageLookupByLibrary.simpleMessage("Изменение типа пользователя"),
         "chat": MessageLookupByLibrary.simpleMessage("Чат"),
         "continue_": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "continue_with_phone":
@@ -42,11 +45,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "male": MessageLookupByLibrary.simpleMessage("Мужчина"),
         "message": MessageLookupByLibrary.simpleMessage("Сообщение"),
         "name": MessageLookupByLibrary.simpleMessage("Имя"),
+        "now_u_are": MessageLookupByLibrary.simpleMessage("Теперь вы"),
+        "offline": MessageLookupByLibrary.simpleMessage("Офлайн"),
+        "online": MessageLookupByLibrary.simpleMessage("Онлайн"),
         "otp_code": MessageLookupByLibrary.simpleMessage("ОТП-код"),
         "profile_setup":
             MessageLookupByLibrary.simpleMessage("Создание профиля"),
         "resend_code_after":
             MessageLookupByLibrary.simpleMessage("Отправить код заново после"),
+        "save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "search_person": MessageLookupByLibrary.simpleMessage("Искать людей"),
         "seconds": MessageLookupByLibrary.simpleMessage("секунд"),
         "send_again": MessageLookupByLibrary.simpleMessage("Отправить заново"),
@@ -62,6 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Условия и положения"),
         "terms_use_privacy_policy": MessageLookupByLibrary.simpleMessage(
             "Условия использования и политика конфиденциальности"),
+        "user_type_change_successful_msg": MessageLookupByLibrary.simpleMessage(
+            "Тип пользователя успешно изменен"),
         "welcome_to_jumush": MessageLookupByLibrary.simpleMessage(
             "Добро пожаловать в \n Jumush"),
         "write_msg":

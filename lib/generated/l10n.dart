@@ -359,6 +359,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User type successfully changed`
+  String get user_type_change_successful_msg {
+    return Intl.message(
+      'User type successfully changed',
+      name: 'user_type_change_successful_msg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change user type`
+  String get change_type {
+    return Intl.message(
+      'Change user type',
+      name: 'change_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Online`
+  String get online {
+    return Intl.message(
+      'Online',
+      name: 'online',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offline`
+  String get offline {
+    return Intl.message(
+      'Offline',
+      name: 'offline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Now you are`
+  String get now_u_are {
+    return Intl.message(
+      'Now you are',
+      name: 'now_u_are',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

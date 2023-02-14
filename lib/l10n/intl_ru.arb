@@ -29,7 +29,14 @@
     "seconds": "секунд",
     "successful_otp_msg": "Правильный ОТП",
     "successfully_registered_msg": "Вы успешно зарегистрироались",
-    "something_wrong": "Что-то пошло не так"
+    "something_wrong": "Что-то пошло не так",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "user_type_change_successful_msg": "Тип пользователя успешно изменен",
+    "change_type": "Изменение типа пользователя",
+    "online": "Онлайн",
+    "offline": "Офлайн",
+    "now_u_are": "Теперь вы"
 
 }
 

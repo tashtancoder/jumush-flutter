@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthdate": MessageLookupByLibrary.simpleMessage("Birth Date"),
         "by_signing_up": MessageLookupByLibrary.simpleMessage(
             "By signig app you are agree to Jumush"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "change_type": MessageLookupByLibrary.simpleMessage("Change user type"),
         "chat": MessageLookupByLibrary.simpleMessage("Chat"),
         "continue_": MessageLookupByLibrary.simpleMessage("Continue"),
         "continue_with_phone":
@@ -42,10 +44,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "male": MessageLookupByLibrary.simpleMessage("male"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "now_u_are": MessageLookupByLibrary.simpleMessage("Now you are"),
+        "offline": MessageLookupByLibrary.simpleMessage("Offline"),
+        "online": MessageLookupByLibrary.simpleMessage("Online"),
         "otp_code": MessageLookupByLibrary.simpleMessage("OTP code"),
         "profile_setup": MessageLookupByLibrary.simpleMessage("Profile Setup"),
         "resend_code_after":
             MessageLookupByLibrary.simpleMessage("Resend code after"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search_person": MessageLookupByLibrary.simpleMessage("Search person"),
         "seconds": MessageLookupByLibrary.simpleMessage("seconds"),
         "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
@@ -61,6 +67,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Terms and Conditions"),
         "terms_use_privacy_policy": MessageLookupByLibrary.simpleMessage(
             "Terms of Use and Privacy Policy"),
+        "user_type_change_successful_msg": MessageLookupByLibrary.simpleMessage(
+            "User type successfully changed"),
         "welcome_to_jumush":
             MessageLookupByLibrary.simpleMessage("Welcome to \n Jumush"),
         "write_msg": MessageLookupByLibrary.simpleMessage("Write message...")

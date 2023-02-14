@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:jumush/blocs/dialogs.dart';
+import 'package:jumush/ui/components/dialogs.dart';
 import 'package:jumush/controllers/user_controller.dart';
 import 'package:jumush/models/user_model.dart';
 import 'package:jumush/repos/api_provider.dart';
@@ -282,10 +282,22 @@ class _RegisterProfileScreenState extends State<RegisterProfileScreen> {
     CustomDialogs.showProgressIndicator(context);
     final resStr = await apiProvider.registerUser(body);
     Navigator.of(context).pop();
-    if (resStr == 'created') {
+    if (resStr.length > 20) {
       CustomDialogs.toast(context, S.of(context).successfully_registered_msg, true);
       await Future.delayed(Duration(seconds: 2));
-      userController.user.value = User.fromMap(jsonDecode(body));
+      final resMap = jsonDecode(resStr);
+      final resBody = jsonEncode({
+        'id': resMap['id'],
+        'online': resMap['online'] ?? false,
+        'name': nameController.text,
+        'surname': surnameController.text,
+        'pol': gender,
+        'phone': widget.phoneNumber,
+        'type': userTypeIndex + 1
+      });
+
+
+      userController.user.value = User.fromMap(jsonDecode(resBody));
       await userController.saveUserToSP();
       Navigator.of(context).pushNamedAndRemoveUntil(
           PageIds.mainTabView, (route) => false);

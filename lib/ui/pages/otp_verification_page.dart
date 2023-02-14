@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:jumush/blocs/dialogs.dart';
+import 'package:jumush/ui/components/dialogs.dart';
 import 'package:jumush/ui/pages/register_profile_page.dart';
 import 'package:sms_autofill/sms_autofill.dart';
 import '/constants/styles/app_colors.dart';

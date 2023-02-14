@@ -29,6 +29,13 @@
     "seconds": "секунд",
     "successful_otp_msg": "Туура ОТП",
     "successfully_registered_msg": "Ийгиликтуу регитрация болдунуз",
-    "something_wrong": "Катаа"
+    "something_wrong": "Катаа",
+    "save": "Сактоо",
+    "cancel": "Кайтуу",
+    "user_type_change_successful_msg": "Колдонуучу туру ийгиликтуу озгорду",
+    "change_type": "Колдонуучунун турун озгортуу",
+    "online": "Онлайн",
+    "offline": "Офлайн",
+    "now_u_are": "Эми сиз"
 
 }

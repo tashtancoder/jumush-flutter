@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthdate": MessageLookupByLibrary.simpleMessage("Туулган кунунуз"),
         "by_signing_up": MessageLookupByLibrary.simpleMessage(
             "Jumush колдонмосуна катталуу менен сиз "),
+        "cancel": MessageLookupByLibrary.simpleMessage("Кайтуу"),
+        "change_type": MessageLookupByLibrary.simpleMessage(
+            "Колдонуучунун турун озгортуу"),
         "chat": MessageLookupByLibrary.simpleMessage("Чат"),
         "continue_": MessageLookupByLibrary.simpleMessage("Улантуу"),
         "continue_with_phone":
@@ -42,10 +45,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "male": MessageLookupByLibrary.simpleMessage("Эркек"),
         "message": MessageLookupByLibrary.simpleMessage("Жазышуу"),
         "name": MessageLookupByLibrary.simpleMessage("Атыныз"),
+        "now_u_are": MessageLookupByLibrary.simpleMessage("Эми сиз"),
+        "offline": MessageLookupByLibrary.simpleMessage("Офлайн"),
+        "online": MessageLookupByLibrary.simpleMessage("Онлайн"),
         "otp_code": MessageLookupByLibrary.simpleMessage("ОТП-код"),
         "profile_setup": MessageLookupByLibrary.simpleMessage("Профиль тузуу"),
         "resend_code_after":
             MessageLookupByLibrary.simpleMessage("Кодту кайра жиберуу"),
+        "save": MessageLookupByLibrary.simpleMessage("Сактоо"),
         "search_person":
             MessageLookupByLibrary.simpleMessage("Кишилерди издоо"),
         "seconds": MessageLookupByLibrary.simpleMessage("секунд"),
@@ -59,6 +66,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "terms_and_conditions": MessageLookupByLibrary.simpleMessage("Шарттар"),
         "terms_use_privacy_policy": MessageLookupByLibrary.simpleMessage(
             "Колдонуу шарттарына жана купуялык политикабызга макул болгон болосуз"),
+        "user_type_change_successful_msg": MessageLookupByLibrary.simpleMessage(
+            "Колдонуучу туру ийгиликтуу озгорду"),
         "welcome_to_jumush":
             MessageLookupByLibrary.simpleMessage("Jumushка \n кош келдиниздер"),
         "write_msg": MessageLookupByLibrary.simpleMessage("Бул жака жазыныз...")

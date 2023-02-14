@@ -29,6 +29,13 @@
     "seconds": "seconds",
     "successful_otp_msg": "Correct OTP",
     "successfully_registered_msg": "You are successfully registered",
-    "something_wrong": "Something went wrong"
+    "something_wrong": "Something went wrong",
+    "save": "Save",
+    "cancel": "Cancel",
+    "user_type_change_successful_msg": "User type successfully changed",
+    "change_type": "Change user type",
+    "online": "Online",
+    "offline": "Offline",
+    "now_u_are": "Now you are"
 
 }
