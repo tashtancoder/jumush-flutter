@@ -36,7 +36,10 @@
     "change_type": "Изменение типа пользователя",
     "online": "Онлайн",
     "offline": "Офлайн",
-    "now_u_are": "Теперь вы"
+    "now_u_are": "Теперь вы",
+    "job_title": "Заголовок работы",
+    "job_description": "Описание работы",
+    "doesnt_matter": "Не важно"
 
 }
 

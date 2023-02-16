@@ -36,6 +36,9 @@
     "change_type": "Колдонуучунун турун озгортуу",
     "online": "Онлайн",
     "offline": "Офлайн",
-    "now_u_are": "Эми сиз"
+    "now_u_are": "Эми сиз",
+    "job_title": "Жумуштун аталышы",
+    "job_description": "Жумушту баяндоо",
+    "doesnt_matter": "Маанисиз"
 
 }

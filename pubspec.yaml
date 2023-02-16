@@ -55,6 +55,10 @@ dependencies:
   fluttertoast: ^8.1.2
   sms_autofill: ^2.2.0
   get_storage: ^2.0.3
+  location: ^4.4.0
+  latlong2: ^0.8.1
+  permission_handler: ^10.2.0
+  #background_fetch: ^1.1.4
 
 
 

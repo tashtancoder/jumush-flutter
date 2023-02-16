@@ -8,7 +8,9 @@ const String changeTypeUri = '$gcVmServer/changetype';
 const String getEmployersUri = '$gcVmServer/employers'; // работодателей
 const String getEmployeesUri = '$gcVmServer/employees'; // рабочих
 const String getAllUri = '$gcVmServer/employees'; // всех
-const String changeEmployeeStateUri = '$gcVmServer/changeEmployeeState'; //
+const String changeEmployeeStateUri = '$gcVmServer/changeEmployeeState'; // make employee online, offline
+const String updateEmployeeLocationUri = '$gcVmServer/updateEmployeeLocation';
+
 class ApiProvider {
   Future <String> registerUser(String body) async {
     print('registerUser method');
@@ -56,9 +58,6 @@ class ApiProvider {
     } catch(e) {
       return 'Network error';
     }
-
-
-
   }
 
   Future <String> changeEmployeeState(String body) async {
@@ -75,6 +74,31 @@ class ApiProvider {
         print(res.body);
         return res.body;
         //final resMsg = jsonDecode(res.body)
+
+      } else {
+        return 'something wrong';
+      }
+    } catch(e) {
+      return 'Network error';
+    }
+
+
+
+  }
+
+  Future <String> updateEmployeeLocation(String body) async {
+    print('updateEmployeeLocation method');
+    Map<String, String> headers = {
+      'Content-Type': "application/json",
+    };
+    try {
+      final res = await put(Uri.parse(updateEmployeeLocationUri), headers: headers, body: body);
+      print(res.body);
+      print(res.statusCode);
+      if (res.statusCode == 202) {
+        print('successful employee location update');
+        print(res.body);
+        return res.body;
 
       } else {
         return 'something wrong';

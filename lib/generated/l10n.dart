@@ -429,6 +429,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Job title`
+  String get job_title {
+    return Intl.message(
+      'Job title',
+      name: 'job_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Job description`
+  String get job_description {
+    return Intl.message(
+      'Job description',
+      name: 'job_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No matter`
+  String get doesnt_matter {
+    return Intl.message(
+      'No matter',
+      name: 'doesnt_matter',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

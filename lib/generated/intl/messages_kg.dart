@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "continue_": MessageLookupByLibrary.simpleMessage("Улантуу"),
         "continue_with_phone":
             MessageLookupByLibrary.simpleMessage("Телефон номер менен баштоо"),
+        "doesnt_matter": MessageLookupByLibrary.simpleMessage("Маанисиз"),
         "employee": MessageLookupByLibrary.simpleMessage("Аткаруучу"),
         "employer": MessageLookupByLibrary.simpleMessage("Иш беруучу"),
         "enter_otp": MessageLookupByLibrary.simpleMessage(
@@ -42,6 +43,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Сураныч, туура номеринизди жазыныз. Оздугунузду тастыктоо учун номеринизге 4-сандык купуя сан жиберебиз"),
         "female": MessageLookupByLibrary.simpleMessage("Аял"),
         "get_started": MessageLookupByLibrary.simpleMessage("Баштоо"),
+        "job_description":
+            MessageLookupByLibrary.simpleMessage("Жумушту баяндоо"),
+        "job_title": MessageLookupByLibrary.simpleMessage("Жумуштун аталышы"),
         "male": MessageLookupByLibrary.simpleMessage("Эркек"),
         "message": MessageLookupByLibrary.simpleMessage("Жазышуу"),
         "name": MessageLookupByLibrary.simpleMessage("Атыныз"),

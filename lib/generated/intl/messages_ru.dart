@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "continue_": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "continue_with_phone":
             MessageLookupByLibrary.simpleMessage("Начать с телефонным номером"),
+        "doesnt_matter": MessageLookupByLibrary.simpleMessage("Не важно"),
         "employee": MessageLookupByLibrary.simpleMessage("Исполнитель"),
         "employer": MessageLookupByLibrary.simpleMessage("Работодатель"),
         "enter_otp": MessageLookupByLibrary.simpleMessage(
@@ -42,6 +43,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Пожалуйста, введите действующий номер телефона. Мы отправим вам 4-значный код для подтверждения вашей учетной записи"),
         "female": MessageLookupByLibrary.simpleMessage("Женщина"),
         "get_started": MessageLookupByLibrary.simpleMessage("Начать"),
+        "job_description":
+            MessageLookupByLibrary.simpleMessage("Описание работы"),
+        "job_title": MessageLookupByLibrary.simpleMessage("Заголовок работы"),
         "male": MessageLookupByLibrary.simpleMessage("Мужчина"),
         "message": MessageLookupByLibrary.simpleMessage("Сообщение"),
         "name": MessageLookupByLibrary.simpleMessage("Имя"),

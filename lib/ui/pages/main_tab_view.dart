@@ -10,13 +10,16 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:jumush/controllers/user_controller.dart';
 import 'package:jumush/ui/components/dialogs.dart';
+import 'package:jumush/ui/pages/employee_search_page.dart';
 import 'package:jumush/ui/pages/message_detail_page.dart';
 import 'package:jumush/ui/pages/message_page.dart';
 import 'package:jumush/ui/pages/notification_page.dart';
 import 'package:jumush/ui/pages/profile_page.dart';
+import 'package:location/location.dart';
 import '../../repos/api_provider.dart';
 import '/constants/styles/text_styles.dart' as style;
 import '/ui/components/buttons.dart' as button;
@@ -35,6 +38,19 @@ class MainTabView extends StatefulWidget {
 class _MainTabViewState extends State<MainTabView> {
   int _currentIndex = 0;
   final UserController userController = UserController.instance;
+  final apiProvider = ApiProvider();
+  final Location _locationService = Location();
+  LocationData? _currentLocation;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    if (userController.user.value.type == 1 && userController.user.value.online) {
+      updateLocation();
+
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     print('Main tab build method');
@@ -145,7 +161,10 @@ class _MainTabViewState extends State<MainTabView> {
               child: FloatingActionButton(
                 backgroundColor: appColor,
                 onPressed: () {
-
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EmployeeSearchScreen()));
                 },
                 child: Icon(Icons.search, color: Colors.white),
               ),
@@ -158,7 +177,6 @@ class _MainTabViewState extends State<MainTabView> {
   }
 
   Future<void> changeEmployeeState(bool newOnline) async{
-    final apiProvider = ApiProvider();
     final body = jsonEncode({
       'id': userController.user.value.id,
       'online': newOnline
@@ -172,11 +190,56 @@ class _MainTabViewState extends State<MainTabView> {
       userController.saveUserToSP();
       userController.user.refresh();*/
       userController.changeEmployeeState(newOnline);
+      if (userController.user.value.online) {
+        updateLocation();
+      }
       CustomDialogs.toast(context, S.of(context).now_u_are + ' ' + (userController.user.value.online ? S.of(context).online : S.of(context).offline), true);
     } else {
       CustomDialogs.toast(context, S.of(context).something_wrong, false);
     }
 
+
+  }
+
+
+  Future <void> getLocation()async{
+    await _locationService.changeSettings(
+        accuracy: LocationAccuracy.high,
+        interval: 100
+    );
+    LocationData? location;
+    bool serviceEnabled;
+    try {
+      serviceEnabled = await _locationService.serviceEnabled();
+      if (serviceEnabled) {
+        location = await _locationService.getLocation();
+        print('location');
+        print(location);
+        _currentLocation = location;
+      }
+
+    } on PlatformException catch (e) {
+      print('flutter map init on Platform Exception');
+      print(e.message);
+      _currentLocation = null;
+    }
+  }
+
+  updateLocation() async{
+    await getLocation();
+    if (_currentLocation != null) {
+      final body = jsonEncode({
+        'id': userController.user.value.id,
+        'latitude': _currentLocation!.latitude,
+        'longitude': _currentLocation!.longitude
+      });
+      final resStr = apiProvider.updateEmployeeLocation(body);
+      if (resStr == 'changed') {
+        print('successful location updated');
+      } else {
+        print('something got wrong in location update');
+      }
+    }
 
   }
 }

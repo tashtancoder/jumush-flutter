@@ -36,6 +36,9 @@
     "change_type": "Change user type",
     "online": "Online",
     "offline": "Offline",
-    "now_u_are": "Now you are"
+    "now_u_are": "Now you are",
+    "job_title": "Job title",
+    "job_description": "Job description",
+    "doesnt_matter": "No matter"
 
 }

@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "continue_": MessageLookupByLibrary.simpleMessage("Continue"),
         "continue_with_phone":
             MessageLookupByLibrary.simpleMessage("Continue with phone number"),
+        "doesnt_matter": MessageLookupByLibrary.simpleMessage("No matter"),
         "employee": MessageLookupByLibrary.simpleMessage("Employee"),
         "employer": MessageLookupByLibrary.simpleMessage("Employer"),
         "enter_otp": MessageLookupByLibrary.simpleMessage(
@@ -41,6 +42,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please enter your valid phone number. We will send you a 4 digit code to verify your account."),
         "female": MessageLookupByLibrary.simpleMessage("female"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get started"),
+        "job_description":
+            MessageLookupByLibrary.simpleMessage("Job description"),
+        "job_title": MessageLookupByLibrary.simpleMessage("Job title"),
         "male": MessageLookupByLibrary.simpleMessage("male"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
